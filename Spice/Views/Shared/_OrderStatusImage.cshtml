@@ -1,0 +1,22 @@
+﻿@model string
+@using Spice.Utility
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ var src = "/images/";}
+@switch (Model)
+{
+    case SD.StatusSubmitted:
+        src += SD.ImageStatusSubmitted;
+        break;
+    case SD.StatusInProcess:
+        src += SD.ImageStatusInProcess;
+        break;
+    case SD.StatusReady:
+        src += SD.ImageStatusReady;
+        break;
+    case SD.StatusCompleted:
+        src += SD.ImageStatusCompleted;
+        break;
+}
+<img src=@src width="100%"/>
